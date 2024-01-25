@@ -1,0 +1,174 @@
+.reviews {
+    margin: 30px 0 100px;
+
+    .reviews__wrapper {
+        &>h3 {
+            color: var(--pri1_1, #242243);
+            font-size: 32px;
+            font-weight: 600;
+            text-transform: capitalize;
+            text-align: center;
+
+            @include media(0, 722px) {
+                display: none;
+            }
+        }
+
+        .opinion {
+            margin-top: 76px;
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+
+            @include media(0, 1052px) {
+                flex-direction: column;
+            }
+
+            .main__opinion {
+                @include media(1052px, 0) {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                &>h3 {
+                    color: #000;
+                    font-family: Open Sans;
+                    font-size: 48px;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    max-width: 380px;
+
+                    @include media(0, 1052px) {
+                        max-width: 500px;
+                    }
+
+                    @include media(0, 722px) {
+                        font-size: 24px;
+                        max-width: 252px;
+                    }
+
+                    span {
+                        color: #09B451;
+                    }
+                }
+
+                .round__buttons {
+                    margin-top: 60px;
+                    display: flex;
+                    gap: 48px;
+
+                    @include media(0, 1052px) {
+                        width: 200px;
+                        height: 70px;
+                        margin-top: 0;
+                    }
+
+                    @include media(0, 452px) {
+                        display: none;
+                    }
+
+                    .left {
+                        border-radius: 50%;
+                        padding: 15px;
+                        background-color: #fff;
+                        border: 1px solid #09B451;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            background-color: #c1ccc5;
+                        }
+                    }
+
+                    .right {
+                        border-radius: 50%;
+                        padding: 15px;
+                        background-color: #fff;
+                        border: 1px solid #09B451;
+                        transition: all .3s ease;
+
+                        &:hover {
+                            background-color: #d0dad4;
+                        }
+                    }
+                }
+            }
+
+            .students {
+                display: flex;
+                gap: 10px;
+
+                @include media(0, 1052px) {
+                    justify-content: space-between;
+                }
+
+                @include media(0, 382px) {
+                    flex-direction: column;
+                }
+
+                .students__item {
+                    max-width: 384px;
+                    display: flex;
+                    gap: 24px;
+                    flex-direction: column;
+
+                    @include media(0, 722px) {
+                        gap: 12px;
+                    }
+
+                    @include media(0, 722px) {
+                        max-width: 300px;
+                    }
+
+                    .st__img {
+                        display: flex;
+                        gap: 16px;
+                        align-items: center;
+
+                        img {
+                            display: block;
+
+                            @include media(0, 722px) {
+                                width: 28px;
+                            }
+                        }
+
+                        h3 {
+                            color: #000;
+                            font-family: Open Sans;
+                            font-size: 20px;
+                            font-weight: 700;
+                            max-width: 180px;
+
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+
+                            @include media(0, 722px) {
+                                font-size: 12px;
+                            }
+
+                            span {
+                                color: #09B451;
+                            }
+                        }
+                    }
+
+                    p {
+                        color: var(--gray1, #333);
+                        font-family: Open Sans;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 30px;
+
+                        /* 166.667% */
+                        @include media(0, 722px) {
+                            font-size: 12px;
+                            line-height: normal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,126 @@
+.navbar {
+    padding-block: 26px;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+
+            .menuBtn {
+                display: none;
+                background: transparent;
+                border: none;
+
+                @include media(0px, 1024px) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        @include media(0px, 1024px) {
+            width: 40vw;
+            height: 200vh;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: #4f4e4e;
+            padding-top: 100px;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transition: left 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: 100;
+        } 
+
+        @include mobile() {
+            width: 60vw;
+        }
+
+        @include media(0px, 540px) {
+            width: 100%;
+        }
+
+        &-item {
+            padding-inline: 15px;
+
+            a {
+                color: rgba(64, 64, 64, 0.80);
+                font-family: 'Open Sans', sans-serif;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 48px;
+                letter-spacing: -0.32px;
+
+                @include media(0px, 1024px) {
+                    color: white;
+                }
+            }
+        }
+
+        & .btn {
+            display: none;
+            flex-direction: column;
+            gap: 30px;
+
+            @include media(0px, 540px) {
+                display: flex;
+            }
+
+            .login-btn {
+                width: 100%;
+                @include buttonPrimary(transparent, 8px 18px);
+            }
+    
+            .register-btn {
+                width: 100%;
+                @include buttonPrimary(#09b451, 12px 24px);
+            }
+        }
+    }
+
+    .nav-active {
+        left: 0;
+        padding-left: 8px;
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        @include media(0px, 540px) {
+            display: none;
+        }
+ 
+        form {
+            margin-right: 7px;
+        }
+
+        .login-btn {
+            @include buttonPrimary(transparent, 8px 18px);
+        }
+
+        .register-btn {
+            @include buttonPrimary(#09b451, 12px 24px);
+        }
+    }
+
+    .userAvatar {
+        display: none;
+
+        @include media(0px, 540px) {
+            display: block;
+        }
+    }
+}

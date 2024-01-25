@@ -1,0 +1,321 @@
+.courses {
+
+    &__wrapper {
+        &>.title {
+            margin: 65px 0 10px;
+
+            @include mobile() {
+                margin: 30px 0 0;
+            }
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h2 {
+                color: #333;
+                font-size: 32px;
+                font-weight: 600;
+                text-transform: capitalize;
+
+                @include tablet() {
+                    font-size: 25px;
+                }
+
+                @include media(0, 540px) {
+                    font-size: 16px;
+                }
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                border-radius: 50px;
+                background: #09B451;
+                padding: 8px 16px;
+
+                color: #FFF;
+                font-size: 18px;
+                font-weight: 400;
+
+                @include media(0, 540px) {
+                    padding: 4px 8px;
+                    font-size: 12px;
+                }
+
+                span {
+                    font-size: 24px;
+                    font-weight: 600;
+                    rotate: 90deg;
+                }
+            }
+        }
+    }
+
+    .courses-carusel {
+        position: relative;
+
+        .courses__list {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+
+            @include mobile() {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            li {
+                @include tablet() {
+                    width: 100%;
+                }
+                @include mobile() {
+                    width: 290px !important;
+                }
+
+                a {
+                    .course__content {
+                        .title {
+                            @include tablet() {
+                                padding-bottom: 20px
+                            };
+                        }
+                    }
+                }
+            }
+        }
+
+        .swiperCourses-button-next {
+            z-index: 100;
+            position: absolute;
+            top: 30%;
+            right: 30px;
+
+            @include mobile() {
+                display: none;
+            }
+        }
+
+        .swiperCourses-button-prev {
+            z-index: 100;
+            position: absolute;
+            top: 30%;
+            left: 30px;
+
+            @include mobile() {
+                display: none;
+            }
+        }
+    }
+
+    .courses__list {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+
+
+        &-item {
+            max-width: 390px;
+            border-radius: 10px;
+            background: #FFF;
+            box-shadow: 0px 0px 20px 0px rgba(203, 203, 203, 0.25);
+
+            @include media(0px, 1024px) {
+                max-width: 290px;
+            }
+
+            @include media(0px, 767px) {
+                max-width: 180px;
+            }
+            @include media(0px, 424px) {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            a {
+                &>img {
+                    width: 100%;
+                    height: 215px;
+                    object-fit: cover;
+                    object-position: center center;
+                    border-top-right-radius: 10px;
+                    border-top-left-radius: 10px;
+
+                    @include tablet() {
+                        height: 195px;
+                    }
+
+                    @include mobile() {
+                        height: 182px;
+                    }
+
+                    @include media(0px, 767px) {
+                        height: 103px;
+                    }
+                    @include media(0px, 424px) {
+                        height: 260px;
+                    }
+                }
+
+                .course__content {
+                    padding: 30px 24px;
+
+                    @include tablet() {
+                        padding: 25px 20px;
+                    }
+
+                    @include mobile() {
+                        padding: 20px 14px;
+                    }
+
+                    @include media(0px, 767px) {
+                        position: relative;
+                    }
+
+                    .title {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        padding-bottom: 40px;
+
+                        @include mobile() {
+                            padding-bottom: 20px;
+                        }
+
+                        @include media(0px, 540px) {
+                            padding-bottom: 10px;
+                        }
+
+                        h3 {
+                            width: 100%;
+                            color: #333;
+                            font-size: 24px;
+                            font-weight: 500;
+                            text-transform: capitalize;
+
+                            @include media(0px, 1024px) {
+                                font-size: 14px;
+                            }
+
+                            @include mobile() {
+                                max-width: 180px;
+                            }
+                            @include media(0px, 424px) {
+                                font-size: 20px;
+                                max-width: 100%;
+                            }
+                        }
+
+                        .rating {
+                            min-width: 50px;
+                            display: flex;
+                            gap: 5px;
+                            margin-top: 8px;
+
+                            @include media(0px, 1024px) {
+                                margin-top: 0;
+                            }
+
+                            @include media(0px, 767px) {
+                                position: absolute;
+                                top: 0px;
+                                right: -10px;
+                            }
+                            @include media(0px, 424px) {
+                                position: static;
+                                margin-top: 5px;
+                            }
+
+                            img {
+                                @include media(425px, 767px) {
+                                    width: 12px;
+                                    height: 12px;
+                                }
+                            }
+
+                            h4 {
+                                color: #000;
+                                font-size: 16px;
+                                font-weight: 400;
+
+                                @include media(425px, 767px) {
+                                    color: #000;
+                                    font-size: 8px;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                    }
+
+                    .course__info {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row-reverse;
+                        justify-content: space-between;
+
+                        @include tablet() {
+                            margin-top: 30px;
+                        }
+
+                        @include mobile() {
+                            margin-top: 0px;
+                        }
+
+                        @include media(425px, 767px) {
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
+
+                        h3 {
+                            color: #09B451;
+                            font-size: 24px;
+                            font-weight: 600;
+
+                            @include media(0px, 1024px) {
+                                font-size: 15px;
+                            }
+                        }
+
+                        &>div {
+                            display: flex;
+                            align-items: center;
+                            gap: 16px;
+
+                            color: #333;
+                            font-size: 16px;
+                            font-weight: 500;
+
+                            @include tablet() {
+                                gap: 10px;
+                                font-size: 10px;
+                            }
+
+                            @include mobile() {
+                                gap: 5px;
+                                font-size: 12px;
+                            }
+
+                            h5 {
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+
+                                img {
+                                    @include tablet() {
+                                        width: 12px;
+                                        height: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

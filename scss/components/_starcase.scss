@@ -1,0 +1,116 @@
+.staircase {
+    background-image: url('../assets/staircase__bg.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    padding: 0 20px 0 20px;
+    margin-top: 150px;
+
+    .staircase__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include media(1162px, 0) {
+            justify-content: center;
+        }
+
+        img {
+            margin-top: -50px;
+            width: 513px;
+            height: 517px;
+
+            @include media(0, 1162px) {
+                display: none;
+            }
+        }
+
+        .dis {
+            padding: 30px 0 50px 0;
+            max-width: 568px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            @include media(0, 1162px) {
+                align-items: center;
+            }
+
+            h3 {
+                color: #FFF;
+                font-size: 42px;
+                font-weight: 700;
+                text-transform: capitalize;
+                max-width: 568px;
+
+                @include media(0, 1162px) {
+                    text-align: center;
+                }
+
+                @include media (0, 620px) {
+                    font-size: 24px;
+                    max-width: 351px;
+                }
+            }
+
+            p {
+                color: #ffffffc5;
+                font-size: 24px;
+                font-weight: 400;
+                text-transform: capitalize;
+
+                @include media(0, 1162px) {
+                    text-align: center;
+                }
+
+                @include media (0, 620px) {
+                    font-size: 16px;
+                    max-width: 351px;
+                }
+            }
+
+            .anchor__tags {
+                margin-top: 66px;
+                display: flex;
+                gap: 32px;
+
+                @include media (0, 620px) {
+                    margin-top: 0;
+                }
+
+                .with {
+                    padding: 20px 42px;
+                    border-radius: 5px;
+                    background: #09B451;
+                    color: #FFF;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    transition: all .3s ease;
+                    border: 1px solid #09B451;
+
+                    &:hover {
+                        background-color: #FFF;
+                        color: #09B451;
+                    }
+                }
+
+                .without {
+                    padding: 20px 42px;
+                    border-radius: 5px;
+                    color: #09B451;
+                    border: 1px solid #09B451;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        background-color: #09B451;
+                        color: #FFF;
+                    }
+
+                }
+            }
+        }
+    }
+}
